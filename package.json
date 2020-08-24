@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel src/index.html"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /dsi-p5-mkart-alu0100833010/ -d build",
+    "publish-gp": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
