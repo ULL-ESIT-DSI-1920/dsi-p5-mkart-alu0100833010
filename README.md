@@ -117,27 +117,26 @@ Una vez instalados los paquetes, creamos un archivo de configuración `.postcssr
 
 Utilizando _Javascript_, creamos el componente **KartPlayer**:
 
- ![Captura7](src/assets/captures/cap2.png)
+ ![Captura5](src/assets/captures/cap2.png)
  
 * `index.js`:
 
- ![Captura8](src/assets/captures/cap3.png)
+ ![Captura6](src/assets/captures/cap6.png)
  
-En `index.js` creamos un array _pokemons_ que contendrá toda la información y características de los 151 pokemons. Estos datos los
-obtendremos de la API gratuita [PokeAPI](https://pokeapi.co/), por tanto, para ello realizaremos una petición desde nuestra 
-aplicación para conseguir la información necesaria haciendo uso de promesas. 
+En `index.js` 
 
-Mediante `fetch` hacemos una llamada a la API y almacenamos la respuesta en un _json()_. Dicho _json_ lo almacenamos en una
-constante que posteriormente le pasaremos al objeto instanciado `pokemon` para obtener detalladamente la información requerida y 
-que almacenaremos en el array _pokemons_.
-
- ![Captura9](src/assets/captures/cap4.png)
+ ![Captura7](src/assets/captures/cap7.png)
  
 Por último, creamos la función `showPokedex` que se encargará de mostrar los datos de los pokemons.
 
-* `Pokemon.js`:
+* `KartPlayer.js`:
 
-![Captura10](src/assets/captures/cap2.png)
+![Captura8](src/assets/captures/cap8.png)
+
+![Captura9](src/assets/captures/cap9.png)
+
+![Captura10](src/assets/captures/cap10.png)
+![Captura11](src/assets/captures/cap11.png)
  
 En `Pokemon.js` se analizan los datos que recibe el objeto `pokemon` de `index.js` y recogemos los que deseamos. Se ha añadido 
 el tipo de pokemon como extra.
