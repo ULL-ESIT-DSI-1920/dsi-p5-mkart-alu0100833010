@@ -71,67 +71,39 @@ comenzamos creando la estructura del proyecto .
   
   Tras esto, la estructura final del proyecto quedaría:
   
-  ![Captura1](src/assets/captures/cap9.png)
+  ![Captura1](src/assets/captures/cap1.png)
   
 ### 2. Código _HTML_.
 
 La estrucutura de `index.html` es la siguiente:
 
- ![Captura2](src/assets/captures/cap1.png)
+ ![Captura2](src/assets/captures/cap3.png)
  
-El código tiene un botón que será el encargado de, una vez se haga click sobre él, muestre los datos de nuestra PokeDex dentro del
-_div_ con `id="pokedex"`.
+El código de `index.html` cuenta con la clase _race_ que indica en que parte de la página estará situada la carrera y dentro de
+dicho elemento se encuentra la clase _road_, donde introduciremos los jugadores a la carrera mediante _Javascript_.
+
+```
+<div class="buttons">
+  <button class="start">Start</button>
+  <button class="restart">Restart</button>
+</div>
+```
+
+También hay dos botones, uno para comenzar la carrera, y el otro, una vez finalizada la carrera, volver a iniciarla.
 
 ### 3. Código _CSS_.
 
-* **PokeDex:**
+* **.race** y **.road**:
 
- ![Captura3](src/assets/captures/cap5.png)
+ ![Captura3](src/assets/captures/cap4.png)
  
-Para mostrar los elementos de nuestra **PokeDex**, se ha utilizado la propiedad `display: grid` de CSS que nos permite dividir los elementos en secciones de filas y columnas.
+* **.buttons**:
 
-![Captura4](src/assets/captures/cap6.png)
-
-Por otro lado, para conseguir que los pokemons inicialmente se muestren de espaldas, y al pasar el cursor se muestren de frente y 
-a su vez aumenten de tamaño, lo hacemos con uso de código _CSS_. 
-
-La pseudo-clase `hover` nos permite realizar una determinada acción cuando el usuario pasa el cursor por encima del elemento al 
-que se le está aplicando. Como cada pokemon tiene dos imágenes que corresponden al frente y a la espalda, lo hacemos de la siguiente forma:
-
-La imagen de frente, inicialmente no se verá: 
-```
-.card .front {
-  display: none;
-}
-```
-Cuando el usuario pase el cursor por el elemento que contenga las imágenes del pokemon, hacemos que la imagen de espaldas no se muestre y que aparezca la frontal:
-
-```
-.card:hover img {
-  display: none
-}
-
-.card:hover .front {
-  display: inline-block;
-}
-```
-Por último, para que dicha imagen aumente, utilizamos la animación `resizePokemon` en la que indicamos el tamaño inicial y final
-y la añadimos en el código cuando se muestre la imagen frontal:
-```
-.card:hover .front {
-  display: inline-block;
-  animation: resizePokemon 1s infinite;
-}
-
-@keyframes resizePokemon {
-  0% { transform: scale(1)}
-  100% { transform: scale(1.2)}
-}
-```
+![Captura4](src/assets/captures/cap5.png)
 
 * **PostCSS:**
 
-Como hemos nombrado anteriormente, **PostCSS** son plugins de _Javascript_ que transforman el código _CSS_. 
+En esta práctica tambien se ha hecho uso de **PostCSS**, que son plugins de _Javascript_ que transforman el código _CSS_. 
 
 Para incorporarlo a nuestro proyecto, como hacemos uso de _Parcel_, el paquete de postcss ya está incorporado, sin embargo debemos
 instalar los paquetes que deseemos mediante **npm** utilizando los siguientes comandos:
@@ -139,17 +111,13 @@ instalar los paquetes que deseemos mediante **npm** utilizando los siguientes co
 ```
 $ npm install -D autoprefixer postcss-clean postcss-font-magician postcss-mixins postcss-nesting
 ```
-![Captura5](src/assets/captures/cap8.png)
-
-Una vez instalados los paquetes, creamos un archivo de configuración `.postcssrc` con el siguiente contenido:
-
- ![Captura6](src/assets/captures/cap7.png)
+Una vez instalados los paquetes, creamos un archivo de configuración `.postcssrc`.
 
 ### 4. Código _Javascript_.
 
-Utilizando _Javascript_, creamos la clase **Pokemon**:
+Utilizando _Javascript_, creamos el componente **KartPlayer**:
 
- ![Captura7](src/assets/captures/cap10.png)
+ ![Captura7](src/assets/captures/cap2.png)
  
 * `index.js`:
 
