@@ -123,23 +123,40 @@ Utilizando _Javascript_, creamos el componente **KartPlayer**:
 
  ![Captura6](src/assets/captures/cap6.png)
  
-En `index.js` 
+En `index.js` se desarrolla la avtividad general del juego. 
 
  ![Captura7](src/assets/captures/cap7.png)
  
-Por último, creamos la función `showPokedex` que se encargará de mostrar los datos de los pokemons.
+Sigue un enfoque funcional, es decir, con pequeñas funciones flecha.
 
 * `KartPlayer.js`:
 
 ![Captura8](src/assets/captures/cap8.png)
 
+En el componente `KartPlayer.js` creamos el shadowDOM para encapsular el HTML y CSS del componente y que no afecte a otros
+karts. 
+
+Además del código proporcionado inicialmente, se han añadido más estilos para las funciones que determinan cuando un kart es
+ganador o perdedor.
+
 ![Captura9](src/assets/captures/cap9.png)
 
+La función `render()` se encarga de mostrar los jugadores.
+
+La función `inc()` se encarga de incrementar la cantidad a la que avanza el kart en el eje x, junto con la función `setSpeed()`
+que se encarga de asignar aleatoriamente la velocidad que toma el kart.
+
 ![Captura10](src/assets/captures/cap10.png)
+
+Las funciones `win()` y `lose()` se encargan de mostrar el kart ganador y los karts perdedores.
+
 ![Captura11](src/assets/captures/cap11.png)
  
-En `Pokemon.js` se analizan los datos que recibe el objeto `pokemon` de `index.js` y recogemos los que deseamos. Se ha añadido 
-el tipo de pokemon como extra.
+Por último, la función `isWinner()` comprueba cuando un kart es ganador. Como los karts avanzan en el eje x y el tamaño de la
+carrera es 950, cuando la x sea mayor o igual a dicha cantidad, ese kart será el ganador.
+
+La función `addToRoad()`, tal y como su nombre indica, añade los karts a la carretera y la función `restart()` que se encarga
+de reiniciar la carrera asignando la x de nuevo a 0.
 
 ### 5. Publicación en _gh-pages_.
  
